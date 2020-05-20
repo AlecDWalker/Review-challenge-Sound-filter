@@ -28,4 +28,8 @@ describe 'modulate' do
   it 'can apply the filters regardless of the element orders in the array' do
     expect(modulate([10, 50, 35, 100, 2], 20, 70)).to eq [20, 50, 35, 70, 20]
   end
+
+  it 'can raise an error if the file is corrupted' do
+    expect{modulate([5,6,7,nil,9])}.to raise_error 'Error: corrupted input (null values contained)'
+  end
 end
