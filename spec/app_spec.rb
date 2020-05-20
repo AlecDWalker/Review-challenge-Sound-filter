@@ -24,4 +24,8 @@ describe 'modulate' do
   it 'should throw an error if the given min/max range is impossible' do
     expect{modulate([5,6,7,8,9], 10, 1)}.to raise_error 'Error: impossible range specified'
   end
+
+  it 'can apply the filters regardless of the element orders in the array' do
+    expect(modulate([10, 50, 35, 100, 2], 20, 70)).to eq [20, 50, 35, 70, 20]
+  end
 end
