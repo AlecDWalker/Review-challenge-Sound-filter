@@ -30,7 +30,7 @@ describe 'modulate' do
   end
 
   it 'can raise an error if the file is corrupted' do
-    expect{modulate([5,6,7,nil,9])}.to raise_error 'Error: corrupted input (nill values contained)'
+    expect{modulate([5,6,7,nil,9])}.to raise_error 'Error: corrupted input (nil values contained)'
   end
 
 end
